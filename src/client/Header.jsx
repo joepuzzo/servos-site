@@ -5,6 +5,7 @@ import useApp from './hooks/useApp';
 import { NavLink } from './components/NavLink';
 import Contrast from '@spectrum-icons/workflow/Contrast';
 import ShowMenu from '@spectrum-icons/workflow/ShowMenu';
+import { NavLinks } from './Nav';
 
 export const Header = () => {
   // header contents modal open state when resize
@@ -28,10 +29,7 @@ export const Header = () => {
           {isDesktopUp ? (
             <>
               <h1 className="brand">S E R V O ' S</h1>
-              <NavLink href="/a">First Page</NavLink>
-              <NavLink href="/b">Second Page</NavLink>
-              <NavLink href="/c">Third Page</NavLink>
-              <NavLink href="/d">Fourth Page</NavLink>
+              <NavLinks />
             </>
           ) : null}
         </Flex>

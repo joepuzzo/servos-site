@@ -7,6 +7,15 @@ import useApp from './hooks/useApp';
 import useOutsideAlerter from './hooks/useOutsideAlerter';
 import { NavLink } from './components/NavLink';
 
+export const NavLinks = () => {
+  return (
+    <>
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/about">About</NavLink>
+    </>
+  );
+};
+
 export const Nav = () => {
   const { toggleColorScheme, navOpen, closeNav } = useApp();
 
@@ -31,10 +40,7 @@ export const Nav = () => {
           <Contrast />
         </ActionButton>
       </Flex>
-      <NavLink href="/a">First Page</NavLink>
-      <NavLink href="/b">Second Page</NavLink>
-      <NavLink href="/c">Third Page</NavLink>
-      <NavLink href="/d">Fourth Page</NavLink>
+      <NavLinks />
     </nav>
   );
 };

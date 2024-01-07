@@ -5,7 +5,7 @@ import AppContext from '../context/AppContext';
  * Provide any application specific data
  */
 const AppProvider = ({ children }) => {
-  const [colorScheme, setColorScheme] = useState('dark');
+  const [colorScheme, setColorScheme] = useState('light');
   const [navOpen, setNavOpen] = useState(false);
 
   const toggleColorScheme = () => {
