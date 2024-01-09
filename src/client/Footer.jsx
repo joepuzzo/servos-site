@@ -10,7 +10,7 @@ const NavLink = ({ children, href, ...rest }) => {
   };
 
   return (
-    <a onPress={onClick} {...rest}>
+    <a onClick={onClick} {...rest}>
       {children}
     </a>
   );
@@ -18,7 +18,7 @@ const NavLink = ({ children, href, ...rest }) => {
 
 export const Footer = () => (
   <footer>
-    <span>App &copy; {new Date().getFullYear()}</span>
+    <span>Servos &copy; {new Date().getFullYear()}</span>
     <span>/</span>
     <NavLink href="/">Home</NavLink>
     <span>/</span>
