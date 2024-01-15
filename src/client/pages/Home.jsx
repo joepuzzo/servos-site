@@ -4,17 +4,24 @@ import useMedia from '../hooks/useMedia';
 import ChevronDown from '@spectrum-icons/workflow/ChevronDown';
 import Carousel from '../components/Carousel';
 import { Card } from '../components/Card';
+import { useEffect, useRef } from 'react';
+import { YouTubePlayer } from '../components/YoutubePlayer';
 
 export const Home = () => {
   const { isDesktopUp } = useMedia();
 
-  // const down = () => {
-  //   document.getElementById('card').scrollIntoView();
-  // };
+  const controlRef = useRef();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
 
   const down = () => {
     // Get the target element
-    const card = document.getElementById('images');
+    const card = document.getElementById('bedroom-bot');
 
     // Get the height of the fixed header
     const headerHeight = document.querySelector('header').offsetHeight; // Replace 'header' with the correct selector for your header
@@ -27,6 +34,8 @@ export const Home = () => {
       top: positionToScrollTo,
       behavior: 'smooth' // Optional: for smooth scrolling
     });
+
+    controlRef.current.playVideo();
   };
 
   return (
@@ -38,6 +47,38 @@ export const Home = () => {
           <ChevronDown size="XL" />
         </button>
       </div>
+      <Card id="bedroom-bot" next="images">
+        <Flex
+          height="70vh"
+          width="100%"
+          justifyContent="center"
+          alignItems="center"
+          wrap
+          direction="row"
+          gap="size-400"
+        >
+          {/* <iframe
+            height="100%"
+            id="player"
+            style={{ borderRadius: '10px' }}
+            src="https://www.youtube.com/embed/aQg6p615RTU?enablejsapi=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe> */}
+          <YouTubePlayer videoId="aQg6p615RTU" controlRef={controlRef} />
+          <iframe
+            height="100%"
+            style={{ borderRadius: '10px', minWidth: '70%' }}
+            src="https://www.youtube.com/embed/7j5LjHlqpBo?si=8qUVm-H-9xLCePX1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </Flex>
+      </Card>
       <Card id="images">
         <Carousel
           const

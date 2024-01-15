@@ -483,29 +483,6 @@ hr {
 
 /* Card */
 
-/* .card {
-  background-color: white;
-  border: 1px solid #eaeaea;
-  opacity: 0.95;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  padding-bottom: 4rem;
-  padding-top: 4rem;
-  border-radius: 20px;
-  width: 70%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-@media (max-width: 800px) {
-  .card {
-    width: 90%;
-  }
-} */
-
 .card {
   background-color: white;
   border: 1px solid #eaeaea;
@@ -519,17 +496,18 @@ hr {
   height: calc(100vh - var(--header-height));
   border: none;
   overflow: scroll;
-  /* border: 2px solid black; */
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 .card-content {
   width: 80%;
-  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  overflow: auto;
 }
 
 @media (max-width: 600px) {
@@ -539,7 +517,7 @@ hr {
 }
 
 .spectrum--darkest .card {
-  background-color: rgba(37, 37, 37, 0.2);
+  background-color: rgba(27, 27, 27, 0.2);
   color: white;
   border: none;
   /* box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),

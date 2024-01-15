@@ -14,46 +14,66 @@ export const About = () => {
   return (
     <>
       <Card next="team">
-        <h1>OUR MISSION</h1>
-        <p>
-          At SERVOS, we reimagine culinary artistry by integrating advanced robotics into the heart
-          of modern cuisine. Our mission is to seamlessly blending technology and tradition. We
-          strive to elevate the dining experience through precision, consistency, and innovation,
-          liberating human creativity from the bounds of routine tasks.{' '}
-        </p>
+        <div>
+          <h1>OUR MISSION</h1>
+          <p>
+            At SERVOS, we reimagine culinary artistry by integrating advanced robotics into the
+            heart of modern cuisine. Our mission is to seamlessly blending technology and tradition.
+            We strive to elevate the dining experience through precision, consistency, and
+            innovation, liberating human creativity from the bounds of routine tasks.{' '}
+          </p>
+        </div>
       </Card>
       <Card id="team" next="about-images">
-        <h1>THE TEAM</h1>
-        <Flex direction="row" alignItems="center" justifyContent="center" gap="size-400" wrap>
-          <Flex
-            direction="column"
-            alignItems="center"
-            justifyContent="center"
-            gap="size-200"
-            width="40%"
-            UNSAFE_style={{ minWidth: '300px' }}
-          >
-            <h2>Joe Puzzo</h2>
-            <img src="/me.png" width="100%"></img>
-          </Flex>
-          <Flex
-            direction="column"
-            alignItems="center"
-            justifyContent="center"
-            gap="size-200"
-            width="40%"
-            UNSAFE_style={{ minWidth: '300px' }}
-          >
-            <h2>Matt Mayer</h2>
-            <img src="/matt.png" width="100%"></img>
+        <Flex direction="column" alignItems="center" justifyContent="center">
+          <h1>THE TEAM</h1>
+          <Flex direction="row" alignItems="center" justifyContent="center" gap="size-400" wrap>
+            <Flex
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+              gap="size-200"
+              width="40%"
+              UNSAFE_style={{ minWidth: '300px' }}
+            >
+              <h2>Joe Puzzo</h2>
+              <img src="/me.png" width="100%"></img>
+            </Flex>
+            <Flex
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+              gap="size-200"
+              width="40%"
+              UNSAFE_style={{ minWidth: '300px' }}
+            >
+              <h2>Matt Mayer</h2>
+              <img src="/matt.png" width="100%"></img>
+            </Flex>
           </Flex>
         </Flex>
       </Card>
-      <Card id="about-images">
+      <Card id="about-images" next="robotjs">
+        <h1>Some Photos</h1>
         <Carousel
           const
           images={['RobotConvo.jpg', 'MassRobotics.jpg', 'UsAtMassRobotics.jpg', 'Snowman.jpg']}
         />
+      </Card>
+      <Card id="robotjs">
+        <h1>Youtube Channel</h1>
+        <div style={{ height: '70vh', width: '90%' }}>
+          <iframe
+            width="100%"
+            height="100%"
+            style={{ borderRadius: '10px' }}
+            src="https://www.youtube.com/embed/7j5LjHlqpBo?si=8qUVm-H-9xLCePX1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
       </Card>
     </>
   );

@@ -1,3 +1,4 @@
+import { Flex } from '@adobe/react-spectrum';
 import ChevronDown from '@spectrum-icons/workflow/ChevronDown';
 
 export const Card = ({ children, id, next }) => {
@@ -20,14 +21,12 @@ export const Card = ({ children, id, next }) => {
 
   return (
     <div className="card" id={id}>
-      <div className="card-content">
-        {children}
-        {next ? (
-          <button className="round-button" onClick={scrollDown}>
-            <ChevronDown size="XL" />
-          </button>
-        ) : null}
-      </div>
+      <div className="card-content">{children}</div>
+      {next ? (
+        <button className="round-button" onClick={scrollDown}>
+          <ChevronDown size="XL" />
+        </button>
+      ) : null}
     </div>
   );
 };
