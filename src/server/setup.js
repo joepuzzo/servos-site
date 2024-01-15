@@ -19,8 +19,8 @@ const setupLogger = () => {
   // Winston transports
   const transports = [
     new winston.transports.Console({
-      level: process.env.LOG_LEVEL || 'info',
-    }),
+      level: process.env.LOG_LEVEL || 'info'
+    })
     // Add other transports here
     /*
      * See:
@@ -34,7 +34,7 @@ const setupLogger = () => {
     transports,
     format: formater,
     // Prevent winston from exeting on uncaught error
-    exitOnError: false,
+    exitOnError: false
   });
 };
 
@@ -56,7 +56,7 @@ const setupCors = () => {
     whitelist = ['http://localhost:3000', 'https://dev.myapp.com'];
   }
   if (process.env.NODE_ENV === 'production') {
-    whitelist = ['https://myapp.com'];
+    whitelist = ['https://sipservos.com'];
   }
   return {
     origin(origin, callback) {
@@ -65,7 +65,7 @@ const setupCors = () => {
       } else {
         callback(new Error('Not allowed by CORS'));
       }
-    },
+    }
   };
 };
 
@@ -76,7 +76,7 @@ const setupCors = () => {
 
 const setup = async () => {
   const configuration = {
-    PORT: 3000,
+    PORT: 3000
   };
   // ---- Always add globals first ----
   setupGlobals();
