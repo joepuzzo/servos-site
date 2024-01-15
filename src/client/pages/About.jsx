@@ -16,12 +16,7 @@ export const About = () => {
       <Card next="team">
         <div>
           <h1>OUR MISSION</h1>
-          <p>
-            At SERVOS, we reimagine culinary artistry by integrating advanced robotics into the
-            heart of modern cuisine. Our mission is to seamlessly blending technology and tradition.
-            We strive to elevate the dining experience through precision, consistency, and
-            innovation, liberating human creativity from the bounds of routine tasks.{' '}
-          </p>
+          <p style={{ fontSize: '50px' }}>Let Humans Do Human Things</p>
         </div>
       </Card>
       <Card id="team" next="about-images">
