@@ -21,7 +21,7 @@ export const Home = () => {
 
   const down = () => {
     // Get the target element
-    const card = document.getElementById('bedroom-bot');
+    const card = document.getElementById('perfect-pour');
 
     // Get the height of the fixed header
     const headerHeight = document.querySelector('header').offsetHeight; // Replace 'header' with the correct selector for your header
@@ -47,6 +47,10 @@ export const Home = () => {
           <ChevronDown size="XL" />
         </button>
       </div>
+      <Card id="perfect-pour" next="bedroom-bot">
+        <h1>PERFECT POUR EVERY TIME</h1>
+        <img alt="perfect pour" src="cup-levels.png" className="card-image" />
+      </Card>
       <Card id="bedroom-bot" next="images">
         <h1>PROGRESS</h1>
         <Flex
@@ -83,7 +87,13 @@ export const Home = () => {
         <h1>PICTURES</h1>
         <Carousel
           const
-          images={['RobotConvo.jpg', 'MassRobotics.jpg', 'UsAtMassRobotics.jpg', 'Snowman.jpg']}
+          images={[
+            'RobotConvo.jpg',
+            'MassRobotics.jpg',
+            'UsAtMassRobotics.jpg',
+            'Snowman.jpg',
+            'cup-levels.png'
+          ]}
         />
       </Card>
       <Card id="robot-viewer">

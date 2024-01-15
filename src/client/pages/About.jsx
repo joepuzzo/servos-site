@@ -52,7 +52,13 @@ export const About = () => {
         <h1>Some Photos</h1>
         <Carousel
           const
-          images={['RobotConvo.jpg', 'MassRobotics.jpg', 'UsAtMassRobotics.jpg', 'Snowman.jpg']}
+          images={[
+            'RobotConvo.jpg',
+            'MassRobotics.jpg',
+            'UsAtMassRobotics.jpg',
+            'Snowman.jpg',
+            'cup-levels.png'
+          ]}
         />
       </Card>
       <Card id="robotjs">
