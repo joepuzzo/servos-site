@@ -57,7 +57,7 @@ export const About = () => {
             'MassRobotics.jpg',
             'UsAtMassRobotics.jpg',
             'Snowman.jpg',
-            'cup-levels.png'
+            'cup-levels.jpg'
           ]}
         />
       </Card>
