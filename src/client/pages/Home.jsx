@@ -48,6 +48,7 @@ export const Home = () => {
         </button>
       </div>
       <Card id="bedroom-bot" next="images">
+        <h1>PROGRESS</h1>
         <Flex
           width="100%"
           justifyContent="center"
@@ -78,10 +79,24 @@ export const Home = () => {
           ></iframe>
         </Flex>
       </Card>
-      <Card id="images">
+      <Card id="images" next="robot-viewer">
+        <h1>PICTURES</h1>
         <Carousel
           const
           images={['RobotConvo.jpg', 'MassRobotics.jpg', 'UsAtMassRobotics.jpg', 'Snowman.jpg']}
+        />
+      </Card>
+      <Card id="robot-viewer">
+        <h1>SOFTWARE</h1>
+        <embed
+          src="https://robot-viewer-qfmqx.ondigitalocean.app/"
+          style={{
+            width: '100%',
+            height: '70vh',
+            marginTop: '2rem',
+            borderRadius: '10px',
+            maxWidth: '1000px'
+          }}
         />
       </Card>
     </>

@@ -508,6 +508,7 @@ hr {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+  overflow-x: scroll;
 }
 
 .card iframe {
@@ -574,4 +575,8 @@ hr {
 
 img {
   border-radius: 10px;
+}
+
+h1 {
+  letter-spacing: 5px;
 }

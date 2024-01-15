@@ -22,9 +22,12 @@ export const Header = () => {
       >
         <Flex direction="row" alignItems="center" gap="size-100">
           {!isDesktopUp ? (
-            <ActionButton aria-label="Open Menu" onPress={() => toggleNav()}>
-              <ShowMenu />
-            </ActionButton>
+            <Flex direction="row" alignItems="center" gap="size-100">
+              <ActionButton aria-label="Open Menu" onPress={() => toggleNav()}>
+                <ShowMenu />
+              </ActionButton>
+              <h1 className="brand">S E R V O ' S</h1>
+            </Flex>
           ) : null}
           {isDesktopUp ? (
             <>
