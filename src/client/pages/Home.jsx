@@ -49,7 +49,6 @@ export const Home = () => {
       </div>
       <Card id="bedroom-bot" next="images">
         <Flex
-          height="70vh"
           width="100%"
           justifyContent="center"
           alignItems="center"

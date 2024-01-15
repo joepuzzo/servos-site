@@ -454,7 +454,7 @@ hr {
 }
 
 /* ---------- Eyes Blinking ----------  */
-@keyframes flatten {
+@-webkit-keyframes flatten {
   0%,
   10%,
   20%,
@@ -478,7 +478,8 @@ hr {
 
 #eye1,
 #eye2 {
-  animation: flatten 5s infinite;
+  -webkit-animation: flatten 5s infinite; /* Safari and Chrome */
+  animation: flatten 5s infinite; /* Standard syntax */
 }
 
 /* Card */
@@ -493,9 +494,9 @@ hr {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
   border: none;
-  overflow: scroll;
+  /* overflow: scroll; */
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -507,7 +508,12 @@ hr {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-  /* overflow: auto; */
+}
+
+.card iframe {
+  min-height: 70vh; /* adjust as needed */
+  flex-grow: 1; /* allows the item to grow to fill available space */
+  /* other styling as needed */
 }
 
 @media (max-width: 600px) {
