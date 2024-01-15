@@ -5,7 +5,7 @@ import ChevronDown from '@spectrum-icons/workflow/ChevronDown';
 import Carousel from '../components/Carousel';
 import { Card } from '../components/Card';
 import { useEffect, useRef } from 'react';
-import { YouTubePlayer } from '../components/YoutubePlayer';
+// import { YouTubePlayer } from '../components/YoutubePlayer';
 
 export const Home = () => {
   const { isDesktopUp } = useMedia();
@@ -57,7 +57,7 @@ export const Home = () => {
           direction="row"
           gap="size-400"
         >
-          {/* <iframe
+          <iframe
             height="100%"
             id="player"
             style={{ borderRadius: '10px' }}
@@ -66,8 +66,8 @@ export const Home = () => {
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-          ></iframe> */}
-          <YouTubePlayer videoId="aQg6p615RTU" controlRef={controlRef} />
+          ></iframe>
+          {/* <YouTubePlayer videoId="aQg6p615RTU" controlRef={controlRef} /> */}
           <iframe
             height="100%"
             style={{ borderRadius: '10px', minWidth: '70%' }}
