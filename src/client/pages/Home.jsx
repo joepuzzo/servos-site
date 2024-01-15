@@ -49,7 +49,7 @@ export const Home = () => {
       </div>
       <Card id="perfect-pour" next="bedroom-bot">
         <h1>PERFECT POUR EVERY TIME</h1>
-        <img alt="perfect pour" src="cup-levels.png" className="card-image" />
+        <img alt="perfect pour" src="cup-levels.jpg" className="card-image" />
       </Card>
       <Card id="bedroom-bot" next="images">
         <h1>PROGRESS</h1>
