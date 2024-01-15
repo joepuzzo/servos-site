@@ -25,7 +25,7 @@ const createApp = ({ corsConfig }) => {
   app.use('/fail', fail);
 
   // Apply CORS to the endpoints
-  // app.use(cors(corsConfig));
+  app.use(cors(corsConfig));
 
   // Route for static content
   if (process.env.NODE_ENV === 'development') {
