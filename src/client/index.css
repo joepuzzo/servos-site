@@ -507,7 +507,7 @@ hr {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 @media (max-width: 600px) {
