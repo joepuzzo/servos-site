@@ -26,12 +26,12 @@ export const Header = () => {
               <ActionButton aria-label="Open Menu" onPress={() => toggleNav()}>
                 <ShowMenu />
               </ActionButton>
-              <h1 className="brand">S E R V O ' S</h1>
+              <h1 className="brand">SERVO'S</h1>
             </Flex>
           ) : null}
           {isDesktopUp ? (
             <>
-              <h1 className="brand">S E R V O ' S</h1>
+              <h1 className="brand">SERVO'S</h1>
               <NavLinks />
             </>
           ) : null}
