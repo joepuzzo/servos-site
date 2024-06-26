@@ -27,6 +27,8 @@ const App = () => {
         UNSAFE_style={{ background: 'transparent' }}
       >
         <div className="site--app">
+          <div id="portal-root"></div>
+
           <Header />
           <Nav />
           <main>

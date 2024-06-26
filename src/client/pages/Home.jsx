@@ -5,7 +5,24 @@ import ChevronDown from '@spectrum-icons/workflow/ChevronDown';
 import Carousel from '../components/Carousel';
 import { Card } from '../components/Card';
 import { useEffect, useRef } from 'react';
+import { Tooltip } from '../components/Tooltip/Tooltip';
+import { StatusMessage } from '../components/StatusMessage';
 // import { YouTubePlayer } from '../components/YoutubePlayer';
+
+const INFO = {
+  PERFECT_POUR: {
+    TITLE: 'Perfect Pour',
+    TEXT: 'We utilize advanced robotics force sensing in order to accuratley pour the same amount of liquid each time!'
+  },
+  PROGRESS: {
+    TITLE: 'Progress',
+    TEXT: 'We have currently integrated with the square Point Of Sale ( POS ) System and are able to take orders from square or from our custom user interface.'
+  },
+  UPDATES: {
+    TITLE: 'Updates',
+    TEXT: 'Recently we updated our system to work on both sides of the table, where the taps live on the left and normal dispensing lives on the right.'
+  }
+};
 
 export const Home = () => {
   const { isDesktopUp } = useMedia();
@@ -48,11 +65,21 @@ export const Home = () => {
         </button>
       </div>
       <Card id="perfect-pour" next="bedroom-bot">
-        <h1>PERFECT POUR EVERY TIME</h1>
+        <div className="title">
+          <h1>PERFECT POUR EVERY TIME</h1>
+          <Tooltip title={INFO.PERFECT_POUR.TITLE} hint="Click These Icons For Details">
+            {INFO.PERFECT_POUR.TEXT}
+          </Tooltip>
+        </div>
+        <StatusMessage title={INFO.PERFECT_POUR.TITLE}>{INFO.PERFECT_POUR.TEXT}</StatusMessage>
         <img alt="perfect pour" src="cup-levels.jpg" className="card-image" />
       </Card>
-      <Card id="bedroom-bot" next="images">
-        <h1>PROGRESS</h1>
+      <Card id="bedroom-bot" next="latest-update">
+        <div className="title">
+          <h1>PROGRESS</h1>
+          <Tooltip title={INFO.PROGRESS.TITLE}>{INFO.PROGRESS.TEXT}</Tooltip>
+        </div>
+        <StatusMessage title={INFO.PROGRESS.TITLE}>{INFO.PROGRESS.TEXT}</StatusMessage>
         <Flex
           width="100%"
           justifyContent="center"
@@ -83,6 +110,32 @@ export const Home = () => {
           ></iframe>
         </Flex>
       </Card>
+      <Card id="latest-update" next="images">
+        <div className="title">
+          <h1>LATEST UPDATES</h1>
+          <Tooltip title={INFO.UPDATES.TITLE}>{INFO.UPDATES.TEXT}</Tooltip>
+        </div>
+        <StatusMessage title={INFO.UPDATES.TITLE}>{INFO.UPDATES.TEXT}</StatusMessage>
+        <Flex
+          width="100%"
+          justifyContent="center"
+          alignItems="center"
+          wrap
+          direction="row"
+          gap="size-400"
+        >
+          {/* <YouTubePlayer videoId="aQg6p615RTU" controlRef={controlRef} /> */}
+          <iframe
+            height="100%"
+            style={{ borderRadius: '10px', minWidth: '70%' }}
+            src="https://www.youtube.com/embed/31x1joimHEU?si=WJ_Ms4pRuTHYiEju"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </Flex>
+      </Card>
       <Card id="images" next="robot-viewer">
         <h1>PICTURES</h1>
         <Carousel
@@ -101,7 +154,7 @@ export const Home = () => {
         <embed
           src="https://robot-viewer-qfmqx.ondigitalocean.app/"
           style={{
-            width: '100%',
+            minWidth: '70%',
             height: '70vh',
             marginTop: '2rem',
             borderRadius: '10px',
