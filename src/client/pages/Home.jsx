@@ -16,11 +16,15 @@ const INFO = {
   },
   PROGRESS: {
     TITLE: 'Progress',
-    TEXT: 'We have currently integrated with the square Point Of Sale ( POS ) System and are able to take orders from square or from our custom user interface.'
+    TEXT: 'We have successfully integrated with the Square Point of Sale (POS) system, enabling us to take orders seamlessly either through Square or our custom user interface.'
   },
   UPDATES: {
     TITLE: 'Updates',
     TEXT: 'Recently we updated our system to work on both sides of the table, where the taps live on the left and normal dispensing lives on the right.'
+  },
+  HIGHLIGHTS: {
+    TITLE: 'Highlights',
+    TEXT: 'A few highlights featuring our display at Mass Robotics in Boston. Note how we previously used a static gripper but have since upgraded to use the flexiv grav gripper.'
   }
 };
 
@@ -128,7 +132,7 @@ export const Home = () => {
           <iframe
             height="100%"
             style={{ borderRadius: '10px', minWidth: '70%' }}
-            src="https://www.youtube.com/embed/31x1joimHEU?si=WJ_Ms4pRuTHYiEju"
+            src="https://www.youtube.com/embed/o1-UVvS9Ero?si=v3v6JDJ_Bcg_lvI-"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -137,7 +141,11 @@ export const Home = () => {
         </Flex>
       </Card>
       <Card id="images" next="robot-viewer">
-        <h1>PICTURES</h1>
+        <div className="title">
+          <h1>HIGHLIGHTS</h1>
+          <Tooltip title={INFO.HIGHLIGHTS.TITLE}>{INFO.HIGHLIGHTS.TEXT}</Tooltip>
+        </div>
+        <StatusMessage title={INFO.HIGHLIGHTS.TITLE}>{INFO.HIGHLIGHTS.TEXT}</StatusMessage>
         <Carousel
           const
           images={[
