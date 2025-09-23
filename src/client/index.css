@@ -2,6 +2,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide scrollbars while maintaining scroll functionality */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+}
+
 body {
   margin: 0px;
 }
@@ -327,7 +337,7 @@ hr {
   background-color: rgb(230, 230, 230); /* Modern Browsers */
 }
 
-/* ------------- Bubble Background ------------- */
+/* ------------- Ice Cube Background ------------- */
 .kk-bubble-background {
   /* height: 100%; */
   width: 100%;
@@ -357,100 +367,124 @@ hr {
   position: absolute;
   list-style: none;
   display: block;
-  /* background-color: rgba(131, 51, 51, 0.15); */
-  /* background-color: rgba(234, 195, 98, 0.15); */
-  background-color: rgba(211, 147, 19, 0.35);
+  background-color: rgba(135, 206, 235, 0.6); /* Light blue */
   top: -100px;
-  border-radius: 50%;
-  animation: circle 10s infinite;
+  border-radius: 8px; /* More angular for ice cubes */
   /* transition-timing-function: linear; */
-  background-color: rgba(207, 175, 110, 0.35);
-  background-color: rgba(101, 119, 200, 0.35);
 }
 
 .a-bubbles li:nth-child(1) {
   width: 40px;
   height: 40px;
   left: 20%;
-  animation-duration: 9s;
-  background-color: rgba(107, 41, 11, 0.35);
-  background-color: rgba(198, 114, 200, 0.35);
+  animation: fall 9s infinite linear;
+  background-color: rgba(70, 130, 180, 0.6); /* Steel blue */
 }
 
 .a-bubbles li:nth-child(2) {
   width: 60px;
   height: 60px;
   left: 40%;
+  animation: fall-reverse 9s infinite linear;
   animation-delay: 1s;
-  animation-duration: 9s;
+  background-color: rgba(100, 149, 237, 0.6); /* Cornflower blue */
 }
 
 .a-bubbles li:nth-child(3) {
   width: 70px;
   height: 70px;
   left: 30%;
+  animation: fall-slow 9s infinite linear;
   animation-delay: 2s;
-  animation-duration: 9s;
-  background-color: rgba(16, 31, 99, 0.35);
-  background-color: rgba(207, 175, 110, 0.35);
+  background-color: rgba(30, 144, 255, 0.6); /* Dodger blue */
 }
 
 .a-bubbles li:nth-child(4) {
   width: 30px;
   height: 30px;
   left: 80%;
+  animation: fall-slow-reverse 9s infinite linear;
   animation-delay: 2.5s;
-  animation-duration: 9s;
-  background-color: rgba(107, 41, 11, 0.35);
-  background-color: rgba(207, 175, 110, 0.35);
+  background-color: rgba(0, 191, 255, 0.6); /* Deep sky blue */
 }
 
 .a-bubbles li:nth-child(5) {
   width: 60px;
   height: 60px;
   left: 50%;
+  animation: fall-reverse 9s infinite linear;
   animation-delay: 4s;
-  animation-duration: 9s;
-  background-color: rgba(8, 73, 6, 0.35);
-  background-color: rgba(112, 203, 109, 0.35);
+  background-color: rgba(64, 164, 223, 0.6); /* Sky blue */
 }
 
 .a-bubbles li:nth-child(6) {
   width: 30px;
   height: 30px;
   left: 70%;
+  animation: fall 9s infinite linear;
   animation-delay: 5s;
-  animation-duration: 9s;
-  background-color: rgba(16, 31, 99, 0.35);
-  background-color: rgba(92, 104, 156, 0.35);
+  background-color: rgba(52, 152, 219, 0.6); /* Medium blue */
 }
 
 .a-bubbles li:nth-child(7) {
   width: 50px;
   height: 50px;
   left: 10%;
+  animation: fall-slow-reverse 9s infinite linear;
   animation-delay: 5.5s;
-  animation-duration: 9s;
+  background-color: rgba(41, 128, 185, 0.6); /* Darker blue */
 }
 
 .a-bubbles li:nth-child(8) {
   width: 70px;
   height: 70px;
   left: 40%;
+  animation: fall-slow 9s infinite linear;
   animation-delay: 6s;
-  animation-duration: 9s;
-  background-color: rgba(8, 73, 6, 0.35);
-  background-color: rgba(112, 203, 109, 0.35);
+  background-color: rgba(65, 105, 225, 0.6); /* Royal blue */
 }
 
-@keyframes circle {
+@keyframes fall {
   0% {
-    -webkit-transform: translateY(calc(100vh + 100px));
-    transform: translateY(calc(100vh + 100px));
+    -webkit-transform: translateY(-100px) rotate(0deg);
+    transform: translateY(-100px) rotate(0deg);
   }
   100% {
-    -webkit-transform: translateY(-100px) rotate(800deg);
-    transform: translateY(-100px) rotate(800deg);
+    -webkit-transform: translateY(calc(100vh + 100px)) rotate(800deg);
+    transform: translateY(calc(100vh + 100px)) rotate(800deg);
+  }
+}
+
+@keyframes fall-reverse {
+  0% {
+    -webkit-transform: translateY(-100px) rotate(0deg);
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(calc(100vh + 100px)) rotate(-800deg);
+    transform: translateY(calc(100vh + 100px)) rotate(-800deg);
+  }
+}
+
+@keyframes fall-slow {
+  0% {
+    -webkit-transform: translateY(-100px) rotate(0deg);
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(calc(100vh + 100px)) rotate(400deg);
+    transform: translateY(calc(100vh + 100px)) rotate(400deg);
+  }
+}
+
+@keyframes fall-slow-reverse {
+  0% {
+    -webkit-transform: translateY(-100px) rotate(0deg);
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(calc(100vh + 100px)) rotate(-400deg);
+    transform: translateY(calc(100vh + 100px)) rotate(-400deg);
   }
 }
 
@@ -488,7 +522,7 @@ hr {
 .card {
   background-color: white;
   border: 1px solid #eaeaea;
-  opacity: 0.95;
+  /* opacity: 0.95; */
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -510,6 +544,12 @@ hr {
   flex-wrap: wrap;
   text-align: center;
   overflow-x: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.card-content::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Edge) */
 }
 
 .card iframe {
@@ -774,4 +814,8 @@ h1 {
   .not-mobile {
     display: none !important;
   }
+}
+
+.big-text {
+  font-size: 50px;
 }

@@ -21,7 +21,7 @@ export const Footer = () => (
     <span>Servos &copy; {new Date().getFullYear()}</span>
     <span>/</span>
     <NavLink href="/">Home</NavLink>
-    <span>/</span>
-    <NavLink href="/asdf">Stock 404 Page</NavLink>
+    {/* <span>/</span> */}
+    {/* <NavLink href="/asdf">Stock 404 Page</NavLink> */}
   </footer>
 );

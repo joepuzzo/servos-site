@@ -7,26 +7,8 @@ import { Card } from '../components/Card';
 import { useEffect, useRef } from 'react';
 import { Tooltip } from '../components/Tooltip/Tooltip';
 import { StatusMessage } from '../components/StatusMessage';
+import { GLTFViewer } from '../components/GLTFViewer';
 // import { YouTubePlayer } from '../components/YoutubePlayer';
-
-const INFO = {
-  PERFECT_POUR: {
-    TITLE: 'Perfect Pour',
-    TEXT: 'We utilize advanced robotics force sensing in order to accuratley pour the same amount of liquid each time!'
-  },
-  PROGRESS: {
-    TITLE: 'Progress',
-    TEXT: 'We have successfully integrated with the Square Point of Sale (POS) system, enabling us to take orders seamlessly either through Square or our custom user interface.'
-  },
-  UPDATES: {
-    TITLE: 'Updates',
-    TEXT: 'Recently we updated our system to work on both sides of the table, where the taps live on the left and normal dispensing lives on the right.'
-  },
-  HIGHLIGHTS: {
-    TITLE: 'Highlights',
-    TEXT: 'A few highlights featuring our display at Mass Robotics in Boston. Note how we previously used a static gripper but have since upgraded to use the flexiv grav gripper.'
-  }
-};
 
 export const Home = () => {
   const { isDesktopUp } = useMedia();
@@ -42,7 +24,7 @@ export const Home = () => {
 
   const down = () => {
     // Get the target element
-    const card = document.getElementById('perfect-pour');
+    const card = document.getElementById('assembly-viewer');
 
     // Get the height of the fixed header
     const headerHeight = document.querySelector('header').offsetHeight; // Replace 'header' with the correct selector for your header
@@ -68,84 +50,55 @@ export const Home = () => {
           <ChevronDown size="XL" />
         </button>
       </div>
-      <Card id="perfect-pour" next="bedroom-bot">
+     
+      <Card id="assembly-viewer" next="intro">
         <div className="title">
-          <h1>PERFECT POUR EVERY TIME</h1>
-          <Tooltip title={INFO.PERFECT_POUR.TITLE} hint="Click These Icons For Details">
-            {INFO.PERFECT_POUR.TEXT}
-          </Tooltip>
+          <h1>TAKE IT FOR A SPIN</h1>
         </div>
-        <StatusMessage title={INFO.PERFECT_POUR.TITLE}>{INFO.PERFECT_POUR.TEXT}</StatusMessage>
-        <img alt="perfect pour" src="cup-levels.jpg" className="card-image" />
+        <GLTFViewer modelPath="/AssemblyV12-Ice.gltf" />
       </Card>
-      <Card id="bedroom-bot" next="latest-update">
-        <div className="title">
-          <h1>PROGRESS</h1>
-          <Tooltip title={INFO.PROGRESS.TITLE}>{INFO.PROGRESS.TEXT}</Tooltip>
-        </div>
-        <StatusMessage title={INFO.PROGRESS.TITLE}>{INFO.PROGRESS.TEXT}</StatusMessage>
-        <Flex
-          width="100%"
-          justifyContent="center"
-          alignItems="center"
-          wrap
-          direction="row"
-          gap="size-400"
-        >
-          <iframe
-            height="100%"
-            id="player"
-            style={{ borderRadius: '10px' }}
-            src="https://www.youtube.com/embed/aQg6p615RTU?enablejsapi=1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-          {/* <YouTubePlayer videoId="aQg6p615RTU" controlRef={controlRef} /> */}
-          <iframe
-            height="100%"
-            style={{ borderRadius: '10px', minWidth: '70%' }}
-            src="https://www.youtube.com/embed/7j5LjHlqpBo?si=8qUVm-H-9xLCePX1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </Flex>
+      <Card id="intro" next="simple">
+        <p className="big-text">Say goodbye to messy cooler ice with Servo's Iced Bucket. This lightweight, 6-lb capacity dispenser delivers hygienic, touch-free ice with a patented auger system, perfect for tailgates, BBQs, camping, and events.</p>
       </Card>
-      <Card id="latest-update" next="images">
-        <div className="title">
-          <h1>LATEST UPDATES</h1>
-          <Tooltip title={INFO.UPDATES.TITLE}>{INFO.UPDATES.TEXT}</Tooltip>
+      
+      <Card id="simple" next="practical">
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ flex: 1 }}>
+            <img src="/FilledDispense2.png" width="60%" />
+            </div>
+          <div style={{ flex: 1 }}>
+            <h4 className="big-text">
+              Simple Operation
+            </h4>
+            <p>
+              We wanted to keep things as simple and intuitive as possible. Simply Turn the knob and get cold clean ice!
+            </p>
+          </div>
         </div>
-        <StatusMessage title={INFO.UPDATES.TITLE}>{INFO.UPDATES.TEXT}</StatusMessage>
-        <Flex
-          width="100%"
-          justifyContent="center"
-          alignItems="center"
-          wrap
-          direction="row"
-          gap="size-400"
-        >
-          {/* <YouTubePlayer videoId="aQg6p615RTU" controlRef={controlRef} /> */}
-          <iframe
-            height="100%"
-            style={{ borderRadius: '10px', minWidth: '70%' }}
-            src="https://www.youtube.com/embed/o1-UVvS9Ero?si=v3v6JDJ_Bcg_lvI-"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </Flex>
       </Card>
-      <Card id="images" next="robot-viewer">
-        <div className="title">
-          <h1>HIGHLIGHTS</h1>
-          <Tooltip title={INFO.HIGHLIGHTS.TITLE}>{INFO.HIGHLIGHTS.TEXT}</Tooltip>
+      <Card id="practical" next="why">
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ flex: 1 }}>
+            <img src="/DispenserLeftNoCup.png" width="80%" />
+            </div>
+          <div style={{ flex: 1 }}>
+            <h4 className="big-text">
+            Portable & Practical
+
+            </h4>
+            <p>
+            Lightweight with a handle that doubles as a stand, maintaining the ideal dispensing angle.
+            </p>
+          </div>
         </div>
-        <StatusMessage title={INFO.HIGHLIGHTS.TITLE}>{INFO.HIGHLIGHTS.TEXT}</StatusMessage>
+      </Card>
+      <Card id="why">
+        <p className="big-text">Why Drink Dirty Cooler Ice When You Can Have Cold Clean Ice</p>
+      </Card>
+      {/* <Card id="images">
+        <div className="title">
+        <h1>THE ICED BUCKET</h1>
+        </div>
         <Carousel
           const
           images={[
@@ -156,20 +109,7 @@ export const Home = () => {
             'cup-levels.jpg'
           ]}
         />
-      </Card>
-      <Card id="robot-viewer">
-        <h1>SOFTWARE</h1>
-        <embed
-          src="https://robot-viewer-qfmqx.ondigitalocean.app/"
-          style={{
-            minWidth: '70%',
-            height: '70vh',
-            marginTop: '2rem',
-            borderRadius: '10px',
-            maxWidth: '1000px'
-          }}
-        />
-      </Card>
+      </Card> */}
     </>
   );
 };

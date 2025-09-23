@@ -12,10 +12,10 @@ function useOutsideAlerter(action, ref, elem) {
        * Alert if clicked on outside of element
        */
       function handleClickOutside(event) {
-        const outsideOfTarket =
+        const outsideOfTarget =
           ref.current && !ref.current.contains(event.target);
-        const outsideOfTrigger = elem && !elem.contains(event.target);
-        if (outsideOfTarket && (elem ? outsideOfTrigger : true)) {
+        const outsideOfTrigger = elem && typeof elem.contains === 'function' && !elem.contains(event.target);
+        if (outsideOfTarget && (elem ? outsideOfTrigger : true)) {
           action();
         }
       }

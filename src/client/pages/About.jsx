@@ -19,7 +19,7 @@ export const About = () => {
           <p style={{ fontSize: '50px' }}>Let Humans Do Human Things</p>
         </div>
       </Card>
-      <Card id="team" next="about-images">
+      <Card id="team" >
         <Flex direction="column" alignItems="center" justifyContent="center">
           <h1>THE TEAM</h1>
           <Flex direction="row" alignItems="center" justifyContent="center" gap="size-400" wrap>
@@ -34,7 +34,7 @@ export const About = () => {
               <h2>Joe Puzzo</h2>
               <img src="/me.png" width="100%"></img>
             </Flex>
-            <Flex
+            {/* <Flex
               direction="column"
               alignItems="center"
               justifyContent="center"
@@ -44,11 +44,11 @@ export const About = () => {
             >
               <h2>Matt Mayer</h2>
               <img src="/matt.png" width="100%"></img>
-            </Flex>
+            </Flex> */}
           </Flex>
         </Flex>
       </Card>
-      <Card id="about-images" next="robotjs">
+      {/* <Card id="about-images" next="robotjs">
         <h1>Some Photos</h1>
         <Carousel
           const
@@ -75,7 +75,7 @@ export const About = () => {
             allowFullScreen
           />
         </div>
-      </Card>
+      </Card> */}
     </>
   );
 };
