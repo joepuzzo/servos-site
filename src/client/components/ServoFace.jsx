@@ -43,7 +43,15 @@ export const ServoFace = ({ width }) => {
         ry="9" // Y radius (vertical), same as rx for a circle
         stroke="#2C2C2C"
         stroke-width="8"
-      />
+      >
+        <animate
+          attributeName="ry"
+          values="9;9;9;1;9;1;9;9;9;9;1;9"
+          keyTimes="0;0.1;0.2;0.25;0.3;0.35;0.4;0.4;0.9;0.9;0.95;1"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
       <ellipse
         id="eye2"
         cx="100" // X center coordinate
@@ -52,7 +60,15 @@ export const ServoFace = ({ width }) => {
         ry="9" // Y radius
         stroke="#2C2C2C"
         stroke-width="8"
-      />
+      >
+        <animate
+          attributeName="ry"
+          values="9;9;9;1;9;1;9;9;9;9;1;9"
+          keyTimes="0;0.1;0.2;0.25;0.3;0.35;0.4;0.4;0.9;0.9;0.95;1"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
 
       <rect x="118.322" y="18.4045" width="10" height="13" fill="#2C2C2C" />
       <circle cx="123.322" cy="10.9747" r="7.5" fill="white" stroke="#2C2C2C" stroke-width="5" />

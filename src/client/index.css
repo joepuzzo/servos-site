@@ -490,33 +490,7 @@ hr {
 }
 
 /* ---------- Eyes Blinking ----------  */
-@-webkit-keyframes flatten {
-  0%,
-  10%,
-  20%,
-  40%,
-  90%,
-  100% {
-    ry: 9; /* Eye remains open most of the time */
-  }
-  25%,
-  35% {
-    ry: 1; /* Start of double blink */
-  }
-  30%,
-  40% {
-    ry: 9; /* Eye reopens between double blinks */
-  }
-  95% {
-    ry: 1; /* Last blink */
-  }
-}
-
-#eye1,
-#eye2 {
-  -webkit-animation: flatten 5s infinite; /* Safari and Chrome */
-  animation: flatten 5s infinite; /* Standard syntax */
-}
+/* Eye blinking animation is handled via SVG <animate> elements in ServoFace.jsx for Safari compatibility */
 
 /* Card */
 
