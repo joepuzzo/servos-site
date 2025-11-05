@@ -2,6 +2,7 @@ import { Flex } from '@adobe/react-spectrum';
 import Carousel from '../components/Carousel';
 import { useEffect } from 'react';
 import { Card } from '../components/Card';
+import { BusinessCard3D } from '../components/BusinessCard3D';
 
 export const About = () => {
   useEffect(() => {
@@ -14,12 +15,14 @@ export const About = () => {
   return (
     <>
       <Card next="team">
-        <div>
-          <h1>OUR MISSION</h1>
-          <p>Let Humans Do Human Things</p>
+        <div className="business-card-wrapper" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', width: '100%' }}>
+          <h1>BUSINESS CARD</h1>
+          <div style={{ width: '100%', height: '70vh' }}>
+            <BusinessCard3D />
+          </div>
         </div>
       </Card>
-      <Card id="team" >
+      <Card id="team" next="mission">
         <Flex direction="column" alignItems="center" justifyContent="center">
           <h1>THE TEAM</h1>
           <Flex direction="row" alignItems="center" justifyContent="center" gap="size-400" wrap>
@@ -47,6 +50,12 @@ export const About = () => {
             </Flex> */}
           </Flex>
         </Flex>
+      </Card>
+      <Card id="mission">
+        <div>
+          <h1>OUR MISSION</h1>
+          <p>Let Humans Do Human Things</p>
+        </div>
       </Card>
       {/* <Card id="about-images" next="robotjs">
         <h1>Some Photos</h1>

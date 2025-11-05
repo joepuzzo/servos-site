@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import { defaultTheme, Provider } from '@adobe/react-spectrum';
 
 // Hooks
@@ -12,14 +12,13 @@ import { Routes } from './Routes';
 import { Nav } from './Nav';
 import { BubbleBackground } from './components/BubbleBackground';
 
-const App = () => {
+const AppContent = () => {
   const { colorScheme } = useApp();
-
-  // const location = window.location;
-  // const playground = location.pathname.includes('playground');
+  const location = useLocation();
+  const isBusinessCardPage = location.pathname === '/business-card';
 
   return (
-    <Router>
+    <>
       <BubbleBackground />
       <Provider
         theme={defaultTheme}
@@ -29,14 +28,22 @@ const App = () => {
         <div className="site--app">
           <div id="portal-root"></div>
 
-          <Header />
-          <Nav />
+          {!isBusinessCardPage && <Header />}
+          {!isBusinessCardPage && <Nav />}
           <main>
             <Routes />
           </main>
-          <Footer />
+          {!isBusinessCardPage && <Footer />}
         </div>
       </Provider>
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 };

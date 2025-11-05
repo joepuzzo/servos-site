@@ -523,6 +523,91 @@ hr {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
+.card-content:has(.business-card-wrapper) {
+  width: 100% !important;
+}
+
+.business-card-wrapper {
+  width: 100% !important;
+}
+
+.business-card-page {
+  margin-top: 0 !important;
+}
+
+main:has(.business-card-page) {
+  margin-top: 0 !important;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.business-card-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.flip-card-button {
+  position: relative !important;
+  bottom: auto !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  background-color: #3e6ae1 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  z-index: 10 !important;
+  min-width: 120px !important;
+}
+
+.share-card-button {
+  position: relative !important;
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid black !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  z-index: 10 !important;
+  min-width: 120px !important;
+}
+
+.share-card-button:hover {
+  background-color: #f0f0f0 !important;
+  border-color: #333 !important;
+}
+
+.flip-card-button:hover {
+  background-color: #2d5bd1 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .business-card-buttons {
+    bottom: auto;
+    top: 20px;
+  }
+  
+  .flip-card-button,
+  .share-card-button {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+    min-width: 100px !important;
+  }
+}
+
 .card-content::-webkit-scrollbar {
   display: none; /* WebKit browsers (Chrome, Safari, Edge) */
 }
