@@ -16,7 +16,7 @@ export const About = () => {
       <Card next="team">
         <div>
           <h1>OUR MISSION</h1>
-          <p style={{ fontSize: '50px' }}>Let Humans Do Human Things</p>
+          <p>Let Humans Do Human Things</p>
         </div>
       </Card>
       <Card id="team" >
