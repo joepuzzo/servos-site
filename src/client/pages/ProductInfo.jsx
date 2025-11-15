@@ -1,7 +1,10 @@
 import { Flex } from '@adobe/react-spectrum';
 import { useEffect } from 'react';
+import useMedia from '../hooks/useMedia';
 
 export const ProductInfo = () => {
+  const { isDesktopUp } = useMedia();
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -30,19 +33,19 @@ export const ProductInfo = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '20px 40px',
+          padding: isDesktopUp ? '20px 40px' : '20px 15px',
           boxSizing: 'border-box'
         }}
       >
         <Flex
-          direction="row"
+          direction={isDesktopUp ? 'row' : 'column'}
           alignItems="center"
           justifyContent="center"
           wrap
           width="100%"
           maxWidth="1600px"
           UNSAFE_style={{
-            gap: '60px'
+            gap: isDesktopUp ? '60px' : '30px'
           }}
         >
         {/* Left Side - Image */}
@@ -50,8 +53,11 @@ export const ProductInfo = () => {
           direction="column"
           alignItems="flex-start"
           justifyContent="center"
-          width="45%"
-          UNSAFE_style={{ minWidth: '350px', flex: '0 0 45%' }}
+          width={isDesktopUp ? '45%' : '100%'}
+          UNSAFE_style={{ 
+            minWidth: isDesktopUp ? '350px' : '0',
+            flex: isDesktopUp ? '0 0 45%' : '1 1 100%'
+          }}
         >
           <div style={{ width: '100%', maxWidth: '600px' }}>
             <img src="/DispenserLeftNoCup.png" width="100%" alt="Servo's Iced Bucket" />
@@ -62,18 +68,21 @@ export const ProductInfo = () => {
         <Flex
           direction="column"
           gap="size-200"
-          width="50%"
-          UNSAFE_style={{ minWidth: '450px', flex: '1 1 50%' }}
+          width={isDesktopUp ? '50%' : '100%'}
+          UNSAFE_style={{ 
+            minWidth: isDesktopUp ? '450px' : '0',
+            flex: isDesktopUp ? '1 1 50%' : '1 1 100%'
+          }}
         >
           {/* Title */}
           <Flex direction="column" gap="size-50">
             <h1
               style={{
                 margin: '0',
-                fontSize: '6rem',
+                fontSize: isDesktopUp ? '6rem' : '3rem',
                 lineHeight: '1.1',
                 fontWeight: 'bold',
-                letterSpacing: '2px',
+                letterSpacing: isDesktopUp ? '2px' : '1px',
                 textAlign: 'left'
               }}
             >
@@ -82,7 +91,7 @@ export const ProductInfo = () => {
             <h2
               style={{
                 margin: '0',
-                fontSize: '3rem',
+                fontSize: isDesktopUp ? '3rem' : '1.5rem',
                 fontWeight: '600',
                 letterSpacing: '1px',
                 opacity: 0.9,
@@ -98,7 +107,7 @@ export const ProductInfo = () => {
             <h3
               style={{
                 margin: '0 0 10px 0',
-                fontSize: '3rem',
+                fontSize: isDesktopUp ? '3rem' : '1.8rem',
                 fontWeight: 'bold',
                 letterSpacing: '1px',
                 textAlign: 'left'
@@ -109,9 +118,9 @@ export const ProductInfo = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '8px 30px',
-                fontSize: '2rem',
+                gridTemplateColumns: isDesktopUp ? 'repeat(2, 1fr)' : '1fr',
+                gap: isDesktopUp ? '8px 30px' : '8px 0',
+                fontSize: isDesktopUp ? '2rem' : '1.2rem',
                 lineHeight: '1.4',
                 textAlign: 'left'
               }}
@@ -137,7 +146,7 @@ export const ProductInfo = () => {
             <h3
               style={{
                 margin: '0',
-                fontSize: '2.5rem',
+                fontSize: isDesktopUp ? '2.5rem' : '1.5rem',
                 fontWeight: 'bold',
                 letterSpacing: '1px',
                 textAlign: 'left'
@@ -148,7 +157,7 @@ export const ProductInfo = () => {
             <p
               style={{
                 margin: '0',
-                fontSize: '2rem',
+                fontSize: isDesktopUp ? '2rem' : '1.1rem',
                 lineHeight: '1.4',
                 fontWeight: '300',
                 textAlign: 'left'
@@ -164,7 +173,7 @@ export const ProductInfo = () => {
             <h3
               style={{
                 margin: '0',
-                fontSize: '2.5rem',
+                fontSize: isDesktopUp ? '2.5rem' : '1.5rem',
                 fontWeight: 'bold',
                 letterSpacing: '1px',
                 textAlign: 'left'
@@ -175,7 +184,7 @@ export const ProductInfo = () => {
             <p
               style={{
                 margin: '0 0 10px 0',
-                fontSize: '2rem',
+                fontSize: isDesktopUp ? '2rem' : '1.1rem',
                 lineHeight: '1.3',
                 fontWeight: '300',
                 textAlign: 'left'
@@ -183,16 +192,16 @@ export const ProductInfo = () => {
             >
               We have solved liquids but why have we not solved for Ice?
             </p>
-            <Flex direction="row" gap="size-600" alignItems="flex-start">
+            <Flex direction={isDesktopUp ? 'row' : 'column'} gap={isDesktopUp ? 'size-600' : 'size-300'} alignItems="flex-start">
               <Flex direction="column" alignItems="flex-start" gap="size-100">
-                <div style={{ fontSize: '4rem', fontWeight: 'bold', color: '#22c55e' }}>✓</div>
-                <div style={{ fontSize: '1.8rem', fontWeight: '500', textAlign: 'left' }}>
+                <div style={{ fontSize: isDesktopUp ? '4rem' : '2.5rem', fontWeight: 'bold', color: '#22c55e' }}>✓</div>
+                <div style={{ fontSize: isDesktopUp ? '1.8rem' : '1.1rem', fontWeight: '500', textAlign: 'left' }}>
                   Liquid Dispensers
                 </div>
               </Flex>
               <Flex direction="column" alignItems="flex-start" gap="size-100">
-                <div style={{ fontSize: '4rem', fontWeight: 'bold', color: '#ef4444' }}>✗</div>
-                <div style={{ fontSize: '1.8rem', fontWeight: '500', textAlign: 'left' }}>
+                <div style={{ fontSize: isDesktopUp ? '4rem' : '2.5rem', fontWeight: 'bold', color: '#ef4444' }}>✗</div>
+                <div style={{ fontSize: isDesktopUp ? '1.8rem' : '1.1rem', fontWeight: '500', textAlign: 'left' }}>
                   Ice Dispensers
                 </div>
               </Flex>
@@ -204,7 +213,7 @@ export const ProductInfo = () => {
             <h3
               style={{
                 margin: '0',
-                fontSize: '2.5rem',
+                fontSize: isDesktopUp ? '2.5rem' : '1.5rem',
                 fontWeight: 'bold',
                 letterSpacing: '1px',
                 textAlign: 'left'
@@ -215,7 +224,7 @@ export const ProductInfo = () => {
             <p
               style={{
                 margin: '0',
-                fontSize: '2rem',
+                fontSize: isDesktopUp ? '2rem' : '1.1rem',
                 lineHeight: '1.4',
                 fontWeight: '300',
                 textAlign: 'left'
@@ -225,8 +234,8 @@ export const ProductInfo = () => {
               your hands clean and your ice fresh.
             </p>
             <Flex direction="row" gap="size-300" alignItems="center" UNSAFE_style={{ marginTop: '5px' }}>
-              <div style={{ fontSize: '3rem', fontWeight: 'bold', color: '#ef4444' }}>✗</div>
-              <div style={{ fontSize: '1.8rem', fontWeight: '500', textAlign: 'left' }}>
+              <div style={{ fontSize: isDesktopUp ? '3rem' : '2rem', fontWeight: 'bold', color: '#ef4444' }}>✗</div>
+              <div style={{ fontSize: isDesktopUp ? '1.8rem' : '1.1rem', fontWeight: '500', textAlign: 'left' }}>
                 From Cooler Ice
               </div>
             </Flex>
@@ -242,7 +251,7 @@ export const ProductInfo = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '60px 40px',
+          padding: isDesktopUp ? '60px 40px' : '40px 15px',
           boxSizing: 'border-box'
         }}
       >
@@ -250,48 +259,30 @@ export const ProductInfo = () => {
           direction="column"
           alignItems="center"
           justifyContent="center"
-          gap="size-600"
+          gap={isDesktopUp ? 'size-600' : 'size-400'}
           width="100%"
           maxWidth="1600px"
         >
           <h2
             style={{
               margin: '0',
-              fontSize: '4rem',
+              fontSize: isDesktopUp ? '4rem' : '2rem',
               fontWeight: 'bold',
-              letterSpacing: '2px',
+              letterSpacing: isDesktopUp ? '2px' : '1px',
               textAlign: 'center'
             }}
           >
             PROTOTYPES
           </h2>
           <Flex
-            direction="row"
-            gap="size-800"
+            direction={isDesktopUp ? 'row' : 'column'}
+            gap={isDesktopUp ? 'size-800' : 'size-400'}
             alignItems="flex-start"
             justifyContent="center"
             wrap
             width="100%"
           >
-            <Flex direction="column" alignItems="center" gap="size-300" width="45%" UNSAFE_style={{ minWidth: '300px' }}>
-              <img
-                src="/Prototype-Candy.jpg"
-                alt="Prototype Candy"
-                style={{ width: '100%', maxWidth: '600px', borderRadius: '10px' }}
-              />
-              <h3
-                style={{
-                  margin: '0',
-                  fontSize: '2.5rem',
-                  fontWeight: 'bold',
-                  letterSpacing: '1px',
-                  textAlign: 'center'
-                }}
-              >
-                3D Printed Prototype With Candy
-              </h3>
-            </Flex>
-            <Flex direction="column" alignItems="center" gap="size-300" width="45%" UNSAFE_style={{ minWidth: '300px' }}>
+            <Flex direction="column" alignItems="center" gap="size-300" width={isDesktopUp ? '45%' : '100%'} UNSAFE_style={{ minWidth: isDesktopUp ? '300px' : '0' }}>
               <img
                 src="/Prototype-Fake-Ice.jpg"
                 alt="First Rotomolded Prototype"
@@ -300,7 +291,7 @@ export const ProductInfo = () => {
               <h3
                 style={{
                   margin: '0',
-                  fontSize: '2.5rem',
+                  fontSize: isDesktopUp ? '2.5rem' : '1.3rem',
                   fontWeight: 'bold',
                   letterSpacing: '1px',
                   textAlign: 'center'
@@ -309,6 +300,48 @@ export const ProductInfo = () => {
                 First Rotomolded Prototype
               </h3>
             </Flex>
+            <Flex direction="column" alignItems="center" gap="size-300" width={isDesktopUp ? '45%' : '100%'} UNSAFE_style={{ minWidth: isDesktopUp ? '300px' : '0' }}>
+              <img
+                src="/Prototype-Candy.jpg"
+                alt="Prototype Candy"
+                style={{ width: '100%', maxWidth: '600px', borderRadius: '10px' }}
+              />
+              <h3
+                style={{
+                  margin: '0',
+                  fontSize: isDesktopUp ? '2.5rem' : '1.3rem',
+                  fontWeight: 'bold',
+                  letterSpacing: '1px',
+                  textAlign: 'center'
+                }}
+              >
+                3D Printed Prototype With Candy
+              </h3>
+            </Flex>
+          </Flex>
+          
+          {/* YouTube Short */}
+          <Flex direction="column" alignItems="center" gap="size-300" width="100%">
+            <div
+              style={{
+                width: '100%',
+                maxWidth: isDesktopUp ? '600px' : '100%',
+                aspectRatio: '9/16',
+                borderRadius: '10px',
+                overflow: 'hidden'
+              }}
+            >
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/uAvyZDfeVe8"
+                title="YouTube Short"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                style={{ borderRadius: '10px' }}
+              />
+            </div>
           </Flex>
         </Flex>
       </div>
