@@ -24,7 +24,7 @@ export const Home = () => {
 
   const down = () => {
     // Get the target element
-    const card = document.getElementById('assembly-viewer');
+    const card = document.getElementById('intro');
 
     // Get the height of the fixed header
     const headerHeight = document.querySelector('header').offsetHeight; // Replace 'header' with the correct selector for your header
@@ -51,16 +51,18 @@ export const Home = () => {
         </button>
       </div>
      
-      <Card id="assembly-viewer" next="intro">
+      
+      <Card id="intro" next="assembly-viewer">
+        <p className="big-text">Say goodbye to messy cooler ice with Servo's Iced Bucket. This lightweight, 6-lb capacity dispenser delivers hygienic, touch-free ice with a patented auger system, perfect for tailgates, BBQs, camping, and events.</p>
+      </Card>
+      
+      <Card id="assembly-viewer" next="simple">
         <div className="title">
           <h1>TAKE IT FOR A SPIN</h1>
         </div>
         <GLTFViewer modelPath="/AssemblyV12-Ice.gltf" />
       </Card>
-      <Card id="intro" next="simple">
-        <p className="big-text">Say goodbye to messy cooler ice with Servo's Iced Bucket. This lightweight, 6-lb capacity dispenser delivers hygienic, touch-free ice with a patented auger system, perfect for tailgates, BBQs, camping, and events.</p>
-      </Card>
-      
+
       <Card id="simple" next="practical">
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ flex: 1 }}>

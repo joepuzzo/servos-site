@@ -368,7 +368,7 @@ hr {
   position: absolute;
   list-style: none;
   display: block;
-  background-color: rgba(135, 206, 235, 0.6); /* Light blue */
+  background-color: rgba(135, 206, 235, 0.3); /* Light blue */
   top: -100px;
   border-radius: 0.417vw; /* More angular for ice cubes */
   /* transition-timing-function: linear; */
@@ -379,7 +379,7 @@ hr {
   height: 2.083vw;
   left: 20%;
   animation: fall 9s infinite linear;
-  background-color: rgba(70, 130, 180, 0.6); /* Steel blue */
+  background-color: rgba(70, 130, 180, 0.3); /* Steel blue */
 }
 
 .a-bubbles li:nth-child(2) {
@@ -388,7 +388,7 @@ hr {
   left: 40%;
   animation: fall-reverse 9s infinite linear;
   animation-delay: 1s;
-  background-color: rgba(100, 149, 237, 0.6); /* Cornflower blue */
+  background-color: rgba(100, 149, 237, 0.3); /* Cornflower blue */
 }
 
 .a-bubbles li:nth-child(3) {
@@ -397,7 +397,7 @@ hr {
   left: 30%;
   animation: fall-slow 9s infinite linear;
   animation-delay: 2s;
-  background-color: rgba(30, 144, 255, 0.6); /* Dodger blue */
+  background-color: rgba(30, 144, 255, 0.3); /* Dodger blue */
 }
 
 .a-bubbles li:nth-child(4) {
@@ -406,7 +406,7 @@ hr {
   left: 80%;
   animation: fall-slow-reverse 9s infinite linear;
   animation-delay: 2.5s;
-  background-color: rgba(0, 191, 255, 0.6); /* Deep sky blue */
+  background-color: rgba(0, 191, 255, 0.3); /* Deep sky blue */
 }
 
 .a-bubbles li:nth-child(5) {
@@ -415,7 +415,7 @@ hr {
   left: 50%;
   animation: fall-reverse 9s infinite linear;
   animation-delay: 4s;
-  background-color: rgba(64, 164, 223, 0.6); /* Sky blue */
+  background-color: rgba(64, 164, 223, 0.3); /* Sky blue */
 }
 
 .a-bubbles li:nth-child(6) {
@@ -424,7 +424,7 @@ hr {
   left: 70%;
   animation: fall 9s infinite linear;
   animation-delay: 5s;
-  background-color: rgba(52, 152, 219, 0.6); /* Medium blue */
+  background-color: rgba(52, 152, 219, 0.3); /* Medium blue */
 }
 
 .a-bubbles li:nth-child(7) {
@@ -433,7 +433,7 @@ hr {
   left: 10%;
   animation: fall-slow-reverse 9s infinite linear;
   animation-delay: 5.5s;
-  background-color: rgba(41, 128, 185, 0.6); /* Darker blue */
+  background-color: rgba(41, 128, 185, 0.3); /* Darker blue */
 }
 
 .a-bubbles li:nth-child(8) {
@@ -442,7 +442,7 @@ hr {
   left: 40%;
   animation: fall-slow 9s infinite linear;
   animation-delay: 6s;
-  background-color: rgba(65, 105, 225, 0.6); /* Royal blue */
+  background-color: rgba(65, 105, 225, 0.3); /* Royal blue */
 }
 
 @keyframes fall {

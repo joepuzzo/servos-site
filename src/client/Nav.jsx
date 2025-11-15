@@ -11,6 +11,7 @@ export const NavLinks = () => {
   return (
     <>
       <NavLink href="/">Home</NavLink>
+      <NavLink href="/product-info">Product Info</NavLink>
       <NavLink href="/about">About</NavLink>
     </>
   );
