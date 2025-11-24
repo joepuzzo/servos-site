@@ -313,7 +313,7 @@ export const ProductInfo = () => {
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/HEYeVNRq0-o"
+                  src="https://www.youtube.com/embed/LxQ-679OrDI"
                   title="YouTube Short"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
