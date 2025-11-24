@@ -163,7 +163,7 @@ export const ProductInfo = () => {
 
             {/* Why Choose Section */}
             <Flex direction="column" gap="size-100">
-              <h3 className="product-info-h3" style={{ marginBottom: '10px' }}>Why Choose The Iced Dispenser:</h3>
+              <h3 className="product-info-h3" style={{ marginBottom: '10px' }}>Why Choose The Iced Bucket:</h3>
               <Flex direction="column" gap="size-150">
                 <div className="product-info-bullet">
                   <strong>Touch-Free Operation:</strong> Manual crank dispenses ice without contact for maximum hygiene.
@@ -222,6 +222,13 @@ export const ProductInfo = () => {
           maxWidth="1600px"
           UNSAFE_style={{ gap: '40px' }}
         >
+          <hr style={{ 
+            width: '100%', 
+            maxWidth: '800px', 
+            border: 'none', 
+            borderTop: '1px solid #e5e7eb', 
+            margin: '40px 0 20px 0' 
+          }} />
           <h2 className="product-info-images-title">Images</h2>
           <Flex
             direction={isTabletUp ? 'row' : 'column'}
@@ -264,21 +271,57 @@ export const ProductInfo = () => {
               <h3 className="product-info-image-label">Factory Manufacturing</h3>
             </Flex>
           </Flex>
+          <br />
+          <hr style={{ 
+            width: '100%', 
+            maxWidth: '800px', 
+            border: 'none', 
+            borderTop: '1px solid #e5e7eb', 
+            margin: '40px 0 0 0' 
+          }} />
           
-          {/* YouTube Short */}
-          <Flex direction="column" alignItems="center" gap="size-300" width="100%">
-            <div className="product-info-youtube-container">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/uAvyZDfeVe8"
-                title="YouTube Short"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                style={{ borderRadius: '10px' }}
-              />
-            </div>
+          <h2 className="product-info-images-title">Videos</h2>
+          
+          {/* YouTube Shorts */}
+          <Flex 
+            direction={isTabletUp ? 'row' : 'column'} 
+            alignItems="center" 
+            gap="size-400" 
+            width="100%"
+            justifyContent="center"
+            wrap
+            UNSAFE_style={{ marginTop: '60px' }}
+          >
+            <Flex direction="column" alignItems="center" gap="size-300" width={isTabletUp ? '45%' : '100%'} UNSAFE_style={{ minWidth: isTabletUp ? '300px' : '0' }}>
+              <h3 className="product-info-image-label">Product Demonstration</h3>
+              <div className="product-info-youtube-container">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/uAvyZDfeVe8"
+                  title="YouTube Short"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ borderRadius: '10px' }}
+                />
+              </div>
+            </Flex>
+            <Flex direction="column" alignItems="center" gap="size-300" width={isTabletUp ? '45%' : '100%'} UNSAFE_style={{ minWidth: isTabletUp ? '300px' : '0' }}>
+              <h3 className="product-info-image-label">How I created It</h3>
+              <div className="product-info-youtube-container">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/HEYeVNRq0-o"
+                  title="YouTube Short"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ borderRadius: '10px' }}
+                />
+              </div>
+            </Flex>
           </Flex>
         </Flex>
       </div>

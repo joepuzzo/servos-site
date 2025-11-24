@@ -16,10 +16,11 @@ const AppContent = () => {
   const { colorScheme } = useApp();
   const location = useLocation();
   const isBusinessCardPage = location.pathname === '/business-card';
+  const isRootPage = location.pathname === '/';
 
   return (
     <>
-      <BubbleBackground />
+      {isRootPage && <BubbleBackground />}
       <Provider
         theme={defaultTheme}
         colorScheme={colorScheme}
